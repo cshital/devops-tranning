@@ -8,13 +8,13 @@
 - Cut a line with Ctrl + K.
 - Paste a line with Ctrl + U.
 
-![](/screen-short/nano-1.png)
+![alt text](</day-1/screen-short/nano-1.png>)
 
 ## cat Command
 
 - Display the contents of a file.
 
-![alt text](/screen-short/cat-group-grep.png)
+![alt text](</day1/screen-short/cat-group-grep.png>)
 
 ## Basic vim Commands
 
@@ -24,7 +24,7 @@
 - Exit without saving with :q!.
 - Delete a line with dd.
 
-![alt text](/screen-short/vim.png)
+![alt text](</day1/screen-short/vim.png>)
 
 ## User and Group Management
 
@@ -32,19 +32,19 @@
 
 - Add a new user.
 
-![alt text](/screen-short/add-group.png)
+![alt text](</day1/screen-short/add-group.png>)
 
 `sudo deluser username`
 
 - Remove a user.
 
-![alt text](/screen-short/del-user.png)
+![alt text](</day1/screen-short/del-user.png>)
 
 `sudo groupadd groupname`
 
 - Create a new group.
 
-![alt text](/screen-short/group-add.png)
+![alt text](</day1/screen-short/group-add.png>)
 
 ## Understanding File Permissions
 
@@ -52,17 +52,17 @@
 
 - Check file permissions.
 
-![alt text](/screen-short/file-permission.png)
+![alt text](</day1/screen-short/file-permission.png>)
 
 `chmod mode filename`
 
-- Change file permissions (e.g., chmod 755 filename).
+- Change file permissions (<e.g., chmod 755 filename>).
 
 `sudo chown user:group filename`
 
 - Change file ownership.
 
-![alt text](/screen-short/file-permission.png)
+![alt text](</day1/screen-short/file-permission.png>)
 
 ## Managing Services with systemctl
 
@@ -70,13 +70,13 @@
 
 - Stop the Apache2 service.
 
-![alt text](/screen-short/service-stop.png)
+![alt text](</day1/screen-short/service-stop.png>)
 
 `sudo systemctl status apache2`
 
 - View the status of the Apache2 service.
 
-![alt text](/screen-short/status-service.png)
+![alt text](</day1/screen-short/status-service.png>)
 
 ## Process Handling
 
@@ -84,14 +84,14 @@
 
 - View all running processes.
 
-![alt text](/screen-short/process.png)
+![alt text](</day1/screen-short/process.png>)
 
 `kill PID`
 
-- Kill a process (e.g., kill 1263).
+- Kill a process (<e.g., kill 1263>).
 
 `renice priority PID`
 
-- Change the priority of a process (e.g., renice 10 8132)
+- Change the priority of a process (<e.g., renice 10 8132>)
 
-![alt text](/screen-short/nice-renice.png)
+![alt text](</day1/screen-short/nice-renice.png>)
