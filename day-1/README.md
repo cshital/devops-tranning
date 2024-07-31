@@ -14,7 +14,7 @@
 
 - Display the contents of a file.
 
-![alt text](</day1/screen-short/cat-group-grep.png>)
+![alt text](</day-1/screen-short/cat-group-grep.png>)
 
 ## Basic vim Commands
 
@@ -24,7 +24,7 @@
 - Exit without saving with :q!.
 - Delete a line with dd.
 
-![alt text](</day1/screen-short/vim.png>)
+![alt text](</day-1/screen-short/vim.png>)
 
 ## User and Group Management
 
@@ -32,19 +32,20 @@
 
 - Add a new user.
 
-![alt text](</day1/screen-short/add-group.png>)
+![alt text](</day-1/screen-short/add-group.png>)
+
 
 `sudo deluser username`
 
 - Remove a user.
 
-![alt text](</day1/screen-short/del-user.png>)
+![alt text](</day-1/screen-short/del-user.png>)
 
 `sudo groupadd groupname`
 
 - Create a new group.
 
-![alt text](</day1/screen-short/group-add.png>)
+![alt text](</day-1/screen-short/group-add.png>)
 
 ## Understanding File Permissions
 
@@ -52,7 +53,7 @@
 
 - Check file permissions.
 
-![alt text](</day1/screen-short/file-permission.png>)
+![alt text](</day-1/screen-short/file-permission.png>)
 
 `chmod mode filename`
 
@@ -62,7 +63,7 @@
 
 - Change file ownership.
 
-![alt text](</day1/screen-short/file-permission.png>)
+![alt text](</day-1/screen-short/file-permission.png>)
 
 ## Managing Services with systemctl
 
@@ -70,13 +71,13 @@
 
 - Stop the Apache2 service.
 
-![alt text](</day1/screen-short/service-stop.png>)
+![alt text](</day-1/screen-short/service-stop.png>)
 
 `sudo systemctl status apache2`
 
 - View the status of the Apache2 service.
 
-![alt text](</day1/screen-short/status-service.png>)
+![alt text](</day-1/screen-short/status-service.png>)
 
 ## Process Handling
 
@@ -84,7 +85,7 @@
 
 - View all running processes.
 
-![alt text](</day1/screen-short/process.png>)
+![alt text](</day-1/screen-short/process.png>)
 
 `kill PID`
 
@@ -94,4 +95,4 @@
 
 - Change the priority of a process (<e.g., renice 10 8132>)
 
-![alt text](</day1/screen-short/nice-renice.png>)
+![alt text](</day-1/screen-short/nice-renice.png>)
