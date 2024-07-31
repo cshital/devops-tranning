@@ -8,7 +8,7 @@
 - Cut a line with Ctrl + K.
 - Paste a line with Ctrl + U.
 
-![alt text](/screen-short/nano-1.png)
+![](/screen-short/nano-1.png)
 
 ## cat Command
 
