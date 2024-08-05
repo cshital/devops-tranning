@@ -11,4 +11,4 @@ docker pull nginx
     • pull the latest Nginx image from Docker Hub.
     • This command will download the latest Nginx image from the Docker Hub repository to your local machine.
 
-![](</devops-tranning/day3-docker/screen-short/1.png>)
+![alt text](screen-short/1.png)
