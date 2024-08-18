@@ -1,0 +1,6 @@
+logs are shown below :-
+Aug 13 12:51:26 AHMLPT2509 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+Aug 13 12:51:32 AHMLPT2509 dockerd[2554]: time="2024-08-13T12:51:32.050782829+05:30" level=error msg="agent: session failed" backoff=8s error="session initiation timed out" module=node/agent node.id=4lm786bohq5yxvw0krfop1zkv
+Aug 13 12:51:32 AHMLPT2509 dockerd[2554]: time="2024-08-13T12:51:32.051699401+05:30" level=info msg="manager selected by agent for new session: {x2wne8asx9zlycpqi6zpgf68x 13.201.80.142:2377}" module=node/agent node.id=4lm786bohq5yxvw0krfop1zkv
+Aug 13 12:51:32 AHMLPT2509 dockerd[2554]: time="2024-08-13T12:51:32.051805354+05:30" level=info msg="waiting 966.170451ms before registering session" module=node/agent node.id=4lm786bohq5yxvw0krfop1zkv
+
