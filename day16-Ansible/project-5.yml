@@ -1,0 +1,20 @@
+---
+- name: Error Handling Example
+  hosts: workers
+  tasks:
+    - name: install software
+      block:
+        - name: install ngnix
+          service:
+            name: ngnix
+            state: started
+
+      rescue:
+        - name: Log error
+          debug:
+            msg: "An error occurred"
+
+      always:
+        - name: Tasks Completed
+          debug:
+            msg: "The playbook execution has completed."

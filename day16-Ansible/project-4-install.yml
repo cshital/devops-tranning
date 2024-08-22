@@ -1,0 +1,9 @@
+---
+- name: Installing specific package
+  hosts: workers
+  become: yes
+  tasks: 
+    - name: install nginx
+      package:
+        name: nginx
+        state: present
