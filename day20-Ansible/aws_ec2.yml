@@ -1,0 +1,14 @@
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-west-2
+
+filters:
+  instance-state-name: running
+  tag:Name:
+    - shital
+
+hostnames:
+  - dns-name
+
+compose:
+  ansible_host: public_dns_name
