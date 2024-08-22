@@ -1,0 +1,18 @@
+---
+- name: Configure Nginx with specific parameters
+  hosts: workers
+  become: yes
+  tasks:
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Add custom nginx.conf
+      copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: '0644'
