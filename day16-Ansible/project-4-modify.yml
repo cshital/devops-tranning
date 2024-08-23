@@ -1,0 +1,9 @@
+---
+- name: Manage Nginx files
+  hosts: workers
+  become: yes
+  tasks:
+    - name: Create a new file for Nginx
+      file:
+        path: /tmp/nginx_info.txt
+        state: touch

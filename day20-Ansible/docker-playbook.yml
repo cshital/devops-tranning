@@ -1,0 +1,25 @@
+- name: Docker Container Creation
+  hosts: my_group
+  become: yes  
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Ensure Docker is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Create and start Docker container
+      community.docker.docker_container:
+        name: my_nginx
+        image: shital37/my_nginx_image:latest  
+        state: started
+        ports:
+          - "8084:80"
+        volumes:
+          - /my/local/path:/usr/share/nginx/html
