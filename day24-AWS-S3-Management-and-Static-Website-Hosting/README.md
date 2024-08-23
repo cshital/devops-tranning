@@ -104,14 +104,20 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
 
 ![Example Image](images/11.png)
 
-4.2 Set Up ACL
-Configure ACLs to provide access to a specific folder for an external user.
 
+#### 4.2 Set Up ACL
+- Configure ACLs to provide access to a specific folder for an external user.
 
-#### 5. Test and Validate the Configuration
-5.1 Test Static Website URL
-Ensure the website is accessible via the S3 endpoint: http://shital-portfolio.s3-website-us-west-2.amazonaws.com/
+![Example Image](images/12.png)
 
-5.2 Validate Storage Class Transitions
-Confirm objects transition between storage classes based on lifecycle policies.
+### 5. Test and Validate the Configuration
 
+#### 5.1 Test Static Website URL
+- Ensure the website is accessible via the S3 endpoint: [http://shital-portfolio.s3-website-us-west-2.amazonaws.com/](http://shital-portfolio.s3-website-us-west-2.amazonaws.com/)
+
+![Example Image](images/13.png)
+
+#### 5.2 Validate Storage Class Transitions
+- Confirm objects transition between storage classes based on lifecycle policies.
+
+![Example Image](images/14.png)
