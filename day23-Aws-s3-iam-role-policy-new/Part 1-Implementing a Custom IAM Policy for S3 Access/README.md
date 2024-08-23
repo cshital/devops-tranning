@@ -19,6 +19,8 @@ In this scenario, a development team needs access to an S3 bucket containing log
 
 ![Alt text](images/1.png)
 
+![Alt text](images/2.png)
+
 
 #### 3. Create a New IAM Policy
 - Navigate to the IAM console and create a new custom policy.
@@ -48,8 +50,8 @@ In this scenario, a development team needs access to an S3 bucket containing log
         ]
     }
     ```
-![Alt text](images/2.png)
 ![Alt text](images/3.png)
+![Alt text](images/4.png)
 
 
 #### 4. Attach the Policy to the IAM Role
@@ -60,8 +62,8 @@ In this scenario, a development team needs access to an S3 bucket containing log
   - Created a new IAM Role `DevTeamRole`.
   - Attached the policy to the `DevTeamRole`.
 
-  ![Alt text](images/4.png)
   ![Alt text](images/5.png)
+  ![Alt text](images/6.png)
 
 
 #### 5. Test the Policy
@@ -72,6 +74,10 @@ In this scenario, a development team needs access to an S3 bucket containing log
 - **Able to list** the S3 bucket.
 - **Able to read** objects from the S3 bucket.
 
+   ![Alt text](/images/7.png)
+
 ### **Unable to delete and write to the S3 Bucket**
 - **Unable to delete** objects from the S3 bucket.
 - **Unable to write** objects to the S3 bucket.
+
+   ![Alt text](/images/8.png)
