@@ -30,19 +30,19 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
 - In the bucket properties, enable static website hosting.
 - Specify `index.html` as the index document.
 
-![Alt text](/images/3.png)
+![Example Image](images/3.png)
 
 #### 1.4 Upload Static Website Files
 - Upload HTML, CSS, and image files to the bucket.
 
-![Alt text](/images/4.png)
+![Example Image](images/4.png)
 
 
 #### 1.5 Ensure Website Accessibility
 - Verify the website is accessible using the S3 static website URL.
   - **URL**: [http://shital-portfolio.s3-website-us-west-2.amazonaws.com/](http://shital-portfolio.s3-website-us-west-2.amazonaws.com/)
 
-  ![Alt text](/images/5.png)
+![Example Image](images/5.png)
 
 
 ### 2. Implement S3 Storage Classes
@@ -55,8 +55,9 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
 - Navigate to the “Objects” tab.
 - Select files and change their storage class as needed.
 
-![Alt text](/images/6.png)
-![Alt text](/images/7.png)
+![Example Image](images/6.png)
+
+![Example Image](images/7.png)
 
 
 
@@ -70,15 +71,16 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
 - Transition older versions of objects to GLACIER after a specified period.
 - Set up a policy to delete non-current versions after 60 days.
 
-![Alt text](/images/8.png)
+![Example Image](images/8.png)
+
 
 - Set up a policy to delete non-current versions of objects after 90 days.
 
-![Alt text](/images/9.png)
+![Example Image](images/9.png)
 
 - Verify that the lifecycle rules are correctly applied.
 
-![Alt text](/images/10.png)
+![Example Image](images/10.png)
 
 
 ### 4. Configure Bucket Policies and ACLs
@@ -100,10 +102,7 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
 }
 ```
 
-![](/images/11.png)
-
-
-
+![Example Image](images/11.png)
 
 4.2 Set Up ACL
 Configure ACLs to provide access to a specific folder for an external user.
