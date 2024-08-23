@@ -32,7 +32,7 @@
     \"App1-Instance1,\" \"App1-Instance2,\" \"App2-Instance1,\"
     \"App2-Instance2\").
 
-![](/images/1.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/1.png)
 
 ## **Security Group Configuration (20 minutes):**
 
@@ -44,7 +44,7 @@
 
 -   Attach the appropriate security groups to the EC2 instances and ALB.
 
-![](/images/2.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/2.png)
 
 ## **Application Load Balancer Setup with Path-Based Routing (40 minutes):**
 
@@ -52,26 +52,23 @@ Create an Application Load Balancer (ALB):
 
 -   Set up an ALB in the same VPC and subnets as your EC2 instances.
 
-![](/images/3.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/3.png)
 
 Configure the ALB with two target groups:
 
 Target Group 1: For \"App1\" instances.
 
-![](/images/4.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/4.png)
 
-![](/images/5.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/5.png)
 
-![](/images/6.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/6.png)
 
+![](/day25-Aws-Ec2-Alb-vpc/images/7.png)
 
-![](/images/7.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/8.png)
 
-![](/images/8.png)
-
-
-![](/images/9.png)
-
+![](/day25-Aws-Ec2-Alb-vpc/images/9.png)
 
 -   Target Group 2: For \"App2\" instances.
 
@@ -84,10 +81,10 @@ Target Group 1: For \"App1\" instances.
         -   Route traffic to \"App1\" instances when the URL path is
             /app1.
 
- ![](/images/10.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/10.png)
 
 
-![](/images/11.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/11.png)
 
 -   Route traffic to \"App2\" instances when the URL path is /app2.
 
@@ -108,20 +105,21 @@ Target Group 1: For \"App1\" instances.
         IPs to ensure that only your IP address can SSH into the
         instances.
 
-![](/images/12.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/12.png)
 
-![](/images/13.png)
-
+![](/day25-Aws-Ec2-Alb-vpc/images/13.png)
 
 ## **Resource Termination (10 minutes):**
 
 Terminate EC2 Instances:
 
-![](/images/14.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/14.png)
+
 
 Delete Load Balancer:
 
-![](/images/15.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/15.png)
+
 Delete Load Balancer and Target Groups:
 
-![](/images/15.png)
+![](/day25-Aws-Ec2-Alb-vpc/images/15.png)
