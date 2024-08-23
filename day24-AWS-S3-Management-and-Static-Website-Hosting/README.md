@@ -17,13 +17,13 @@ This project involves creating and configuring an Amazon S3 bucket to host a sta
   - d. Enter the bucket name and choose a region.
   - e. Click “Create bucket.”
 
-![](</images/1.png>)
+![Example Image](images/1.png)
 
 #### 1.2 Enable Versioning
 - Navigate to the bucket properties.
 - Enable versioning to keep track of object versions.
 
-![Alt text](/images/2.png)
+![Example Image](images/2.png)
 
 
 #### 1.3 Set Up Static Website Hosting
