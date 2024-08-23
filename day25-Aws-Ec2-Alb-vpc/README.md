@@ -26,7 +26,6 @@
 -   SSH into each instance and deploy a simple web application:
 
     -   Deploy \"App1\" on two instances.
-
     -   Deploy \"App2\" on the other two instances.
 
 -   Assign tags to the instances for identification (e.g.,
@@ -76,14 +75,8 @@ Target Group 1: For \"App1\" instances.
 
 -   Target Group 2: For \"App2\" instances.
 
-```{=html}
-<!-- -->
-```
 -   Register the appropriate EC2 instances with each target group.
 
-```{=html}
-<!-- -->
-```
 -   Configure Path-Based Routing:
 
     -   Set up path-based routing rules on the ALB:
