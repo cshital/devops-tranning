@@ -17,7 +17,7 @@ In this scenario, a development team needs access to an S3 bucket containing log
 #### 2. Create the S3 Bucket
 - **Bucket Name**: `shital-application-logs`
 
-![Alt text](/images/1.png)
+![Alt text](images/1.png)
 
 
 #### 3. Create a New IAM Policy
