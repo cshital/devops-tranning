@@ -74,10 +74,11 @@ In this scenario, a development team needs access to an S3 bucket containing log
 - **Able to list** the S3 bucket.
 - **Able to read** objects from the S3 bucket.
 
-   ![Alt text](/images/7.png)
+![Able to list and read](/images/7.png)
+
 
 ### **Unable to delete and write to the S3 Bucket**
 - **Unable to delete** objects from the S3 bucket.
 - **Unable to write** objects to the S3 bucket.
 
-   ![Alt text](/images/8.png)
+![Unable to delete and write](/images/8.png)
