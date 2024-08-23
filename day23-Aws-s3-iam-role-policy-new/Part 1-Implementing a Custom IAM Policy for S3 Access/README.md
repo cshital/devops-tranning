@@ -48,6 +48,9 @@ In this scenario, a development team needs access to an S3 bucket containing log
         ]
     }
     ```
+![Alt text](images/2.png)
+![Alt text](images/3.png)
+
 
 #### 4. Attach the Policy to the IAM Role
 - Attach the custom policy to the `DevTeamRole` role.
@@ -57,15 +60,18 @@ In this scenario, a development team needs access to an S3 bucket containing log
   - Created a new IAM Role `DevTeamRole`.
   - Attached the policy to the `DevTeamRole`.
 
+  ![Alt text](images/4.png)
+  ![Alt text](images/5.png)
+
+
 #### 5. Test the Policy
 - Attempt to access the S3 bucket using the `DevTeamRole` to ensure only the allowed actions (list and read) are permitted.
 - Document the results of the test, ensuring that actions outside of the allowed scope (e.g., delete, write) are correctly denied.
 
-- **Test Results**:
-  - Able to list and read the S3 Bucket.
-  - Unable to delete and write to the S3 Bucket.
+### **Able to list and read the S3 Bucket**
+- **Able to list** the S3 bucket.
+- **Able to read** objects from the S3 bucket.
 
-## Additional Notes
-- Make sure that the policy is correctly applied and tested to avoid unintended permissions.
-- For cost estimation of the multi-tier architecture solution, use the AWS Pricing Calculator.
-
+### **Unable to delete and write to the S3 Bucket**
+- **Unable to delete** objects from the S3 bucket.
+- **Unable to write** objects to the S3 bucket.
