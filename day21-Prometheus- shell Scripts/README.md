@@ -68,7 +68,7 @@ log_message "System metrics collection completed successfully."
 
 ![Description](images/1.png)
 
-![Description](images/2.png)
+![Description](images/1.2.png)
 
 
 ### 2. Log Management Script
@@ -111,7 +111,8 @@ chmod +x log_management.sh
 ./log_management.sh
 ```
 
-![Alt text](/images/2.png)
+![Description](images/2.png)
+
 
 ### 3. Advanced Shell Scripting - Loops, Conditions, Functions, and Error Handling
 
@@ -200,8 +201,8 @@ chmod +x metrics_advance.sh
 ```
 
 ![Description](images/3.png)
+![Description](images/3.1.png)
 
-![Alt text](/images/3.1.png)
 
 ### 4. Log Checking and Troubleshooting
 
@@ -261,7 +262,7 @@ chmod +x log_troubleshooting.sh
 ./log_troubleshooting.sh
 ```
 
-![Alt text](/images/4.png)
+![Description](images/4.png)
 
 ### 5. Installation and Setup of Prometheus and Node Exporter
 
@@ -271,7 +272,7 @@ Install and configure Prometheus and Node Exporter.
 ```
 wget https://github.com/prometheus/prometheus/releases/download/v2.53.1/prometheus-2.53.1.linux-amd64.tar.gz
 ```
-![Alt text](/images/5.png)
+![Description](images/5.png)
 
 **unzip prometheus**
 ```
@@ -289,15 +290,16 @@ scrape_configs:
       - targets: ['localhost:9100']
 ```
 
-![Alt text](/images/5.1.png)
+![Description](images/5.1.png)
 
 **start prometheus**
 ```
 ./prometheus
 ```
 
-![Alt text](/images/5.2.png)
-![Alt text](/images/5.3.png)
+![Description](images/5.2.png)
+![Description](images/5.3.png)
+
 
 #### Installing Node Exporter
 
@@ -313,14 +315,15 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_e
 tar -xvf node_exporter-1.8.2.linux-amd64.tar.gz
 cd node_exporter-1.8.2.linux-amd64/
 ```
-![Alt text](/images/5.4.png)
+![Description](images/5.4.png)
 
 • start node_exporter
 ```
 ./node_exporter
 ```
-![Alt text](/images/5.5.png)
-![Alt text](/images/5.6.png)
+![Description](images/5.5.png)
+![Description](images/5.6.png)
+
 
 Updating config file and adding new job in scrape_config
 
@@ -333,7 +336,7 @@ scrape_configs:
 
 Prometheus scraping metrics from Node Exporter
 
-![Alt text](/images/5.7.png)
+![Description](images/5.7.png)
 
 ### 6. Prometheus Query Language (PromQL) Basic Queries
 
@@ -345,7 +348,7 @@ Create a series of PromQL queries to monitor system performance, such as CPU usa
 ```
 rate(node_cpu_seconds_total[5m])
 ```
-![Alt text](/images/6.png)
+![Description](images/6.png)
 
 • monitor memory usage
 
@@ -353,7 +356,8 @@ rate(node_cpu_seconds_total[5m])
 100 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100)
 ```
 
-![Alt text](/images/6.1.png)
+![Description](images/6.1.png)
+
 
 • monitor disk I/O
 
