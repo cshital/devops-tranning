@@ -66,8 +66,10 @@ log_message "System metrics collection completed successfully."
 ./metrics.sh
 ```
 
-![Alt text](/images/1.png)
-![Alt text](/images/1.2.png)
+![Description](images/1.png)
+
+![Description](images/2.png)
+
 
 ### 2. Log Management Script
 
@@ -197,7 +199,8 @@ chmod +x metrics_advance.sh
 ./metrics_advance.sh
 ```
 
-![Alt text](/images/3.png)
+![Description](images/3.png)
+
 ![Alt text](/images/3.1.png)
 
 ### 4. Log Checking and Troubleshooting
