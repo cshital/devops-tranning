@@ -63,18 +63,19 @@ To finalize the task, compile a comprehensive report that includes:
 ### **Application Load Balancer:** 
 Configured to distribute traffic across multiple EC2 instances.
 
-![Alt text](/images/1.png)
+![Alt text](images/1.png)
+
 
 
 ### **EC2 Instances for Application Servers:** 
 Selected to handle the anticipated application load effectively.
 
-![Alt text](/images/2.png)
+![Alt text](images/2.png)
 
 ### **RDS Instance for the Database:** 
 Configured to provide a scalable and reliable database solution.
 
-![Alt text](/images/3.png)
+![Alt text](images/3.png)
 
 ### **Final Budget:**
 Estimated using the AWS Pricing Calculator with potential cost optimizations identified.
