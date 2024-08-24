@@ -45,6 +45,8 @@ ansible-inventory -i aws_ec2.yml --list
 ansible-inventory -i aws_ec2.yml --graph
 ```
 ![Alt Text](images/1.png)
+![Alt Text](images/2.png)
+![Alt Text](images/3.png)
 
 ## 2. Performance Tuning
 
@@ -83,3 +85,76 @@ ansible-playbook -i inventory.ini docker-playbook.yml -vvv
 # -vvvv -> ansible internal details
 ansible-playbook -i inventory.ini docker-playbook.yml -vvvv
 ```
+
+![Alt Text](images/4.png)
+![Alt Text](images/5.png)
+![Alt Text](images/6.png)
+
+## 4. Exploring Advanced Modules
+
+**• Activity:** Use advanced Ansible modules such as docker_container to manage containerized applications and aws_ec2 for AWS infrastructure management, demonstrating their integration and usage.
+
+**• Deliverable:** Playbooks showcasing the deployment and management of Docker containers and AWS EC2 instances, along with documentation on the benefits and configurations of these advanced modules.
+
+## Docker Container Module Example :
+
+```
+- name: Docker Container Creation
+  hosts: my_group
+  become: yes  
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+ 
+    - name: Ensure Docker is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+ 
+    - name: Create and start Docker container
+      community.docker.docker_container:
+        name: my_nginx
+        image: shital37/my_nginx_image:latest  
+        state: started
+        ports:
+          - "8084:80"
+        volumes:
+          - /my/local/path:/usr/share/nginx/html
+```
+
+![Alt Text](images/7.png)
+![Alt Text](images/8.png)
+
+
+### AWS ec2 Module Example :
+• Write a playbook to manage AWS EC2 instances using the aws_ec2 module.
+
+• Sample playbook for creating an security group:
+
+```
+- name: Launch an EC2 instance
+  hosts: localhost
+  collections:
+    - amazon.aws
+  tasks:
+ 
+  - name: Create security group
+    amazon.aws.ec2_security_group:
+      name: "new-security-group"
+      description: "Sec group for app"
+      rules:                               
+        - proto: tcp
+          ports:
+            - 22
+          cidr_ip: 0.0.0.0/0
+          rule_desc: allow all on ssh port
+      state: present
+    delegate_to: localhost      
+```
+
+![Alt Text](images/9.png)
+
