@@ -80,6 +80,7 @@ Configured to provide a scalable and reliable database solution.
 ### **Final Budget:**
 Estimated using the AWS Pricing Calculator with potential cost optimizations identified.
 
-![Alt text](/images/4.png)
-![Alt text](/images/5.png)
+![Alt text](images/4.png)
+![Alt text](images/5.png)
+
 By following these steps, you can design a scalable and cost-effective web application architecture on AWS that meets both performance and budget requirements.
