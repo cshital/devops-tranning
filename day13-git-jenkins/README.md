@@ -22,7 +22,7 @@ cd app
 git init
 ```
 
-![](</images/1.png>)
+![](images/1.png)
 
 Create Branches:
 
@@ -34,7 +34,7 @@ git branch production
 
 Repository pushed to remote Git server (e.g., GitHub, GitLab, Bitbucket).
 
-![](</images/2.png>)
+![](images/2.png)
 
 Switch to Branches:
 
@@ -117,11 +117,11 @@ Push the Project Code to All Branches:
 
 Configure Multi-Branch Pipeline Job in Jenkins.
 
-![](</images/4.png>)
+![](images/4.png)
 
-![](</images/5.png>)
+![](images/5.png)
 
-![](</images/6.png>)
+![](images/6.png)
 
 Create Jenkinsfile for Build and Deployment:
 
@@ -187,7 +187,7 @@ Create Jenkinsfile for Build and Deployment:
     }
 ```
 
-![](</images/7.png>)
+![](images/7.png)
 
 ## Output
 
