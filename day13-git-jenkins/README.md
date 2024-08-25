@@ -1,3 +1,5 @@
+# Day-13
+
 # Multi-Branch Project
 
 ## Project Overview
@@ -10,7 +12,7 @@ Objectives:
 - Set up a Jenkins multi-branch pipeline to automate builds and deployments.
 
 Project Deliverables
-1. Git Repository
+## 1. Git Repository
 
 Initialize Local Git Repository:
 
@@ -30,6 +32,8 @@ git branch staging
 git branch production
 ```
 
+Repository pushed to remote Git server (e.g., GitHub, GitLab, Bitbucket).
+
 ![](</images/2.png>)
 
 Switch to Branches:
@@ -48,7 +52,7 @@ Push to Remote Git Server (e.g., GitHub, GitLab, Bitbucket):
     git push -u origin [branch name]
 ```
 
-2. Maven Project
+## 2. Maven Project
 
 Create a Simple Java Maven Project:
 
@@ -109,7 +113,7 @@ Push the Project Code to All Branches:
     git push -u origin production
 ```
 
-3. Jenkins Setup
+## 3. Jenkins Setup
 
 Configure Multi-Branch Pipeline Job in Jenkins.
 
