@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    environment {
+        // ANSIBLE_SUDO_PASSWORD = credentials('Ansible')
+        registry = 'docker.io'  
+        registryCredential = 'dockerhub' 
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/cshital/Day15.git', branch: 'main'
+            }
+        }
+
+        stage('build image') {
+            steps{
+                script{
+                    docker.withRegistry('', registryCredential){
+                        def customImage = docker.build("shital37/mynginx-app:latest")
+                        customImage.push()
+                       
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+        success {
+            echo 'Pipeline succeeded.'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+
+}
+ 
