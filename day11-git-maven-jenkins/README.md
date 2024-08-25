@@ -1,68 +1,103 @@
-Addressbook Tutorial
-====================
+# Maven Project with Jenkins Freestyle Jobs and Pipeline View
 
-This tutorial teaches you some of the basic concepts in [Vaadin Framework](https://vaadin.com). It is meant to be
-a fast read for learning how to get started - not an example on how application should be
-designed. Please note this example uses and requires Java 8 to work.
+## Project Overview
 
-![Addressbook Screenshot](addressbook_screenshot.png "Addressbook Screenshot")
+This project involves setting up a private Git repository containing a Maven project, and creating two Jenkins freestyle `jobs`: one for compiling the Maven project and the other for testing it. Additionally, a pipeline view is configured in Jenkins to visualize the build process.
+
+### Steps
+
+## Step 1: Private Git Repo
+
+Create a Private Git Repository:
+
+Set up a new private Git repository to store the Maven project code.
+
+![](images/1.png)
+
+    Generate a Personal Access Token:
+        Create a personal access token to enable Jenkins to securely access the private repository.
+
+![](images/2.png)
+
+## Step 2: Compile Maven Project
+
+Create a New Freestyle Project in Jenkins:
+    Set up a Jenkins freestyle project to compile the Maven code.
+
+![](images/3.png)
+
+Set Up Git Credentials in Jenkins:
+    Configure Jenkins with your Git credentials (username, personal access token) to access the private repository.
+
+![](images/4.png)
 
 
-Running the example from the command line
--------------------
+Configure the Freestyle Project:
+    Link the Jenkins project to the private Git repository.
+    Set up the project to trigger builds based on changes to the repository.
+
+![](images/5.png)
+
+
+Setup Maven Installation in Jenkins:
+    Ensure that Maven is installed and configured in Jenkins.
+
+![](images/6.png)
+
+
+Set Up Maven Build Steps for Compilation:
+    Add a build step to run the Maven command:
+
+![](images/7.png)
+
+
+```bash
+mvn clean compile
 ```
-$ mvn jetty:run
+Build the "Maven Compile" Project:
+    Run the Jenkins job to compile the Maven project.
+
+![](images/8.png)
+![](images/9.png)
+
+## Step 3: Test Maven Project
+
+Create a New Freestyle Project in Jenkins:
+    Set up another Jenkins freestyle project to test the Maven code.
+
+ ![](images/10.png)   
+
+Configure the Freestyle Project:
+    Link this Jenkins project to the private Git repository, similar to the compile project.
+
+![](images/11.png)    
+
+Set Up Maven Build Steps for Testing:
+    Add a build step to run the Maven command:
+
+```bash
+mvn test
 ```
+![](images/12.png)
 
-Open [http://localhost:8080/](http://localhost:8080/)
 
+Build the "Maven Test" Project:
+    Run the Jenkins job to execute the tests on the Maven project.
 
-Importing in IntelliJ IDEA 14
---------------------
-These instructions were tested on IntelliJ IDEA 14 CE. You can get it from https://www.jetbrains.com/idea/
+![](images/13.png)    
 
-To get the project up and running in IDEA, do:
-- File -> New -> Project from Version Control -> Git
-- The URL to use is https://github.com/vaadin/addressbook.git
-- If you get a message about "Non-managed pom.xml file found". Choose "Add as Maven Project"
-- If you get a message about no JDK or SDK being selected. Choose "Configure" and select your installed JDK. You can also set the JDK using File -> Project Structure
-- To start the project, find the "Maven Projects" tab on the right hand side of the screen and navigate to
-  - Vaadin Web Application -> Plugins -> jetty -> jetty:run
-  - Click the play button or right click and select Run (Select Debug instead to run in debug mode)
+## Step 4: Pipeline View
 
-You should now have a Jetty server running on localhost:8080. Navigate to http://localhost:8080 to play with the application
+Create a Pipeline View in Jenkins:
 
-Importing in NetBeans 8
---------------------
-These instructions were tested on NetBeans 8.0.2. You can get it from https://www.netbeans.org
+![](images/14.png)
 
-To checkout and run the project in NetBeans, do:
-- Team -> Git -> Clone
-- Set repository URL to https://github.com/vaadin/addressbook.git
-- Finish
-- Right click the imported project (Vaadin Addressbook Application) and select Run
-- Select GlassFish Server 4.1 -> Remember in Current IDE Session -> OK
+Set up a new "Build Pipeline" view in Jenkins to visualize the sequence of jobs (compilation and testing) for the Maven project.
 
-You should now have a GlassFish server running on localhost:8080 and a browser tab should also be automatically opened with this location
+Configure the Pipeline View:
 
-Importing in Eclipse
---------------------
-These instructions were tested on Eclipse IDE for Java EE Developers Luna SR2. You can get it from http://eclipse.org/downloads/
+![](images/15.png)
+![](images/16.png)
+![](images/17.png)
 
-To checkout and run the project in Eclipse, do:
-- File -> Import...
-- Check out Maven Projects from SCM
-- Choose Git from SCM menu
-  - If you do not see "Git" in the SCM menu, click "Find more SCM connectors in the m2e Marketplace" and install "m2e-egit". Restart Eclipse and start over.
-- Set the repository URL to https://github.com/vaadin/addressbook.git
-- Right click the imported "addressbook" and choose Run As -> Maven Build...
-  - Set the goal to "jetty:run" and click "Run"
-
-You should now have a Jetty server running on localhost:8080. Navigate to [http://localhost:8080/](http://localhost:8080/) to play with the application
-
-To use the built in server adapters of Eclipse, instead of doing "Run As -> Maven Build..." you can do
-- Run As -> Run on Server
-- Select the server you want to run on, e.g. Apache Tomcat 8 and click ok
-- *Do not use the suggested J2EE Preview server* as it is outdated, deprecated and does not support Servlet 3, which is required for this application
-
-*** End of documentation
+Link the pipeline view to the "Maven Compile" and "Maven Test" projects to provide a comprehensive view of the build process.
