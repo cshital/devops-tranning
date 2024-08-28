@@ -80,17 +80,21 @@ Git Stash
 
 First, create a new directory for your project and initialize a Git repository:
 
+```
 mkdir git-stash-example
+```
 
 ![](</screen-short-git/7.png>)
 
-
+```
 cd git-stash-example
+```
 
 ![](</screen-short-git/8.png>)
 
-
+```
 git init
+```
 
 ![](</screen-short-git/9.png>)
 
@@ -100,10 +104,12 @@ git init
 
 Create some files and add content to them:
 
-
-
+```
 echo "This is file1.txt" > file1.txt
+```
+```
 echo "This is file2.txt" > file2.txt
+```
 
 ![](</screen-short-git/10.png>)
 
@@ -113,9 +119,9 @@ git add file1.txt file2.txt
 
 ![](</screen-short-git/11.png>)
 
-
-
+```
 git commit -m "Initial commit - Added file1.txt and file2.txt"
+```
 
 ![](</screen-short-git/12.png>)
 
@@ -125,9 +131,8 @@ Make some changes to file1.txt:
 
 ```
 echo "Updated content in file1.txt" >> file1.txt
-![](</screen-short-git/13.png>)
-
 ```
+![](</screen-short-git/13.png>)
 
 ## Step 4: Use git stash
 
@@ -145,31 +150,34 @@ git stash save "WIP: Work in progress changes"
 
 You can verify the stash list using:
 
+```
 git stash list
+```
 
 ![](</screen-short-git/15.png>)
 
 
-    It should show something like:
+- It should show something like:
 
-    graphql
-    stash@{0}: On master: WIP: Work in progress changes
+- graphql stash@{0}: On master: WIP: Work in progress changes
 
 ## Step 6: Check Working Directory Status
 
 Check the status of your working directory:
 
-
+```
 git status
+```
 
-    It should indicate that your working directory is clean (no changes).
+- It should indicate that your working directory is clean (no changes).
 
 ## Step 7: Apply Stashed Changes
 
 Let's apply the stashed changes back into your working directory:
 
-
+```
 git stash pop
+```
 
 ![](</screen-short-git/17.png>)
 
@@ -178,8 +186,9 @@ git stash pop
 
 Check the changes in file1.txt:
 
-
+```
 cat file1.txt
+```
 
 ![](</screen-short-git/18.png>)
 
@@ -188,12 +197,12 @@ cat file1.txt
 
 If you are satisfied with the changes, commit them:
 
-
+```
 git add file1.txt
+```
+```
 git commit -m "Updated file1.txt with stashed changes"
+```
 
 ![](</screen-short-git/19.png>)
-
-
-This Markdown code will format the ## Steps for Git Cherry Pick and Git Stash in a clear and structured way.
 
