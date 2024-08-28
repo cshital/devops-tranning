@@ -1,0 +1,85 @@
+- name: Set up application server
+  hosts: app
+  become: yes
+
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start and enable Nginx service
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Copy application files
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
+
+# -----------------------------------------------------
+
+- name: Setup MySQL with database and remote login
+  hosts: database
+  become: yes
+
+  vars: 
+    db_user: user
+    db_pass: pass
+    db_name: my_db
+  
+  tasks:
+    - name: Installing MySQL and dependencies
+      package:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - mysql-server
+        - mysql-client 
+        - python3-mysqldb
+        - libmysqlclient-dev
+
+    - name: Start and enable MySQL service
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Creating MySQL user
+      mysql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_pass }}"
+        priv: '*.*:ALL'
+        host: '%'
+        state: present
+
+    - name: Creating database
+      mysql_db:
+        name: "{{ db_name }}"
+        state: present
+
+# -----------------------------------------------------
+
+- name: Connect Webserver to database
+  hosts: app
+  become: yes
+  vars:
+    db_host: "db_server-01"  
+    db_name: "my_db"
+    db_user: "user"
+    db_pass: "pass"
+
+  tasks:
+    - name: Configure application
+      template:
+        src: templates/app_config.php.j2
+        dest: /var/www/html/app_config.php
