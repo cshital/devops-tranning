@@ -1,0 +1,30 @@
+- name: Installing Node.js and npm
+  apt:
+    name: 
+      - nodejs
+      - npm
+    state: present
+    update_cache: yes
+
+- name: Creating application directory
+  file:
+    path: /usr/src/app
+    state: directory
+
+- name: Deploying backend app
+  template:
+    src: index.js.j2
+    dest: /usr/src/app/index.js
+
+- name: Deploying package.json
+  copy:
+    src: ../files/package.json
+    dest: /usr/src/app/package.json
+
+- name: Installing Node.js dependencies
+  npm:
+    path: /usr/src/app
+    state: present
+
+- name: Starting backend app
+  shell: node /usr/src/app/index.js &
