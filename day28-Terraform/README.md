@@ -85,4 +85,68 @@ resource "aws_s3_bucket" "static_files" {
 
 - **IAM Role and Policy:** Allow the EC2 instance to access the S3 bucket by assigning the appropriate IAM role and policy.
 
+```
+resource "aws_iam_role" "instance_role" {
+  name = "ec2_instance_role"
 
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      },
+    ]
+  })
+}
+```
+## Outputs
+
+- **Terraform Outputs:** Define Terraform outputs to display:
+
+    - The EC2 instance’s public IP address.
+    - The RDS instance’s endpoint.
+    - The S3 bucket name.
+
+`Output.tf`
+
+```
+output "ec2_instance_public_ip" {
+  value = aws_instance.web.public_ip
+}
+
+output "rds_endpoint" {
+  value = aws_db_instance.mysql.endpoint
+}
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.static_files.bucket
+}
+```
+## 2. Apply and Manage Infrastructure
+
+## Initial Deployment
+
+**Initialize Configuration:** Run `terraform init` to initialize the Terraform configuration.
+
+![](images/1.png)
+
+**2.Review Changes:** Use `terraform plan` to review the infrastructure changes before applying.
+
+![](images/2.png)
+![](images/3.png)
+
+**3.Deploy Infrastructure:** Deploy the infrastructure using `terraform apply`. Ensure that the application server, database, and S3 bucket are set up correctly.
+
+![](images/4.png)
+![](images/5.png)
+
+### 4. Resource Termination
+
+**Destroy Resources** Once the deployment is complete and validated, run `terraform destroy` to tear down all resources created by Terraform.
+
+![](images/6.png)
+![](images/7.png)
