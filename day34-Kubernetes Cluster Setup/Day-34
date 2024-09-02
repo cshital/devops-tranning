@@ -1,0 +1,6 @@
+# Day-34  
+
+sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.27.11
+
+
+sudo kubeadm join 172.31.38.167:6443 --token n6860q.bn944upx5m625pu6 \ --discovery-token-ca-cert-hash sha256:e8d0e15b32c69caff7588883dcef1036ce596250529ab34ba119df34aa989e56 
