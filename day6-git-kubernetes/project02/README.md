@@ -1,4 +1,8 @@
-# Project 02: Deploying a Python Flask App Using Minikube Kubernetes
+# Day 6 
+
+# Project 02 
+
+## Deploying a Python Flask App Using Minikube Kubernetes
 
 ## Overview
 This project guides you through deploying a Python Flask application using Minikube Kubernetes. You'll use Git for version control, explore branching and fast-forward merges, and set up Kubernetes services and deployment pods, including ClusterIP and NodePort service types.
@@ -20,22 +24,17 @@ Create a new directory for your project:
 mkdir flask-k8s-project
 cd flask-k8s-project
 ```
+![](images/1.png)
+![](images/2.png)
 
-![](</Project02/images/1.png>)
-
-![](</Project02/images/2.png>)
-
-
-1.2. Initialize a Git Repository
+### 1.2. Initialize a Git Repository
 
 ```bash
 git init
 ```
+![](images/3.png)
 
-![](</Project02/images/3.png>)
-
-
-1.3. Install Python 3 if Not Already Installed
+### 1.3. Install Python 3 if Not Already Installed
 
 ```bash
 sudo apt update
@@ -43,7 +42,7 @@ sudo apt install python3
 sudo apt install python3-venv
 ```
 
-1.4. Create a Python Flask Application
+### 1.4. Create a Python Flask Application
 
 Create a virtual environment:
 
@@ -52,16 +51,14 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-1.5. Install Flask
+### 1.5. Install Flask
 
 ```bash
 pip install Flask
 ```
+![](images/4.png)
 
-![](</Project02/images/4.png>)
-
-
-1.6. Create an app.py File with the Following Content:
+### 1.6. Create an app.py File with the Following Content:
 
 ```python
 from flask import Flask
@@ -74,23 +71,22 @@ def hello_world():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
+![](images/5.png)
 
-![](</Project02/images/6.png>)
-
-
-1.7. Create requirements.txt
+### 1.7. Create requirements.txt
 
 Create a requirements.txt file to list the dependencies:
 
 Flask
 
-1.8. Create a .gitignore File to Ignore venv:
+![](images/7.png)
+
+### 1.8. Create a .gitignore File to Ignore venv:
 
 ```bash
 echo "venv" > .gitignore
 ```
-
-1.9. Commit the Initial Code
+### 1.9. Commit the Initial Code
 
 Add files to Git:
 
@@ -103,17 +99,20 @@ Commit the changes:
 ```bash
 git commit -m "Initial commit with Flask app"
 ```
+![](images/8.png)
 
-2. Branching and Fast-Forward Merge
-2.1. Create a New Branch
+## 2. Branching and Fast-Forward Merge
+
+### 2.1. Create a New Branch
 
 Create and switch to a new branch feature/add-route:
 
 ```bash
 git checkout -b feature/add-route
 ```
+![](images/9.png)
 
-2.2. Implement a New Route
+### 2.2. Implement a New Route
 
 Modify app.py to add a new route:
 
@@ -122,6 +121,7 @@ Modify app.py to add a new route:
 def new_route():
     return 'This is a new route!'
 ```
+![](images/10.png)
 
 Commit the changes:
 
@@ -129,39 +129,34 @@ Commit the changes:
 git add .
 git commit -m "Add new route"
 ```
+![](images/11.png)
 
-![](</Project02/images/8.png>)
-
-
-![](</Project02/images/11.png>)
-
-
-
-2.3. Merge the Branch Using Fast-Forward
+### 2.3. Merge the Branch Using Fast-Forward
 
 Switch back to the main branch:
 
 ```bash
 git checkout main
 ```
+![](images/12.png)
 
 Merge the feature/add-route branch using fast-forward:
 
 ```bash
 git merge --ff-only feature/add-route
 ```
+![](images/13.png)
 
 Delete the feature branch:
 
 ```bash
 git branch -d feature/add-route
 ```
+![](images/14.png)
 
-![](</Project02/images/12.png>)
+## 3. Containerize the Flask Application
 
-
-3. Containerize the Flask Application
-3.1. Create a Dockerfile
+### 3.1. Create a Dockerfile
 
 Create a Dockerfile with the following content:
 
@@ -174,43 +169,40 @@ COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
 ```
+![](images/15.png)
 
-![](</Project02/images/15.png>)
-
-
-3.2. Build and Test the Docker Image
+### 3.2. Build and Test the Docker Image
 
 Build the Docker image:
 
 ```bash
 docker build -t flask-k8s-app .
 ```
-![](</Project02/images/16.png>)
-
+![](images/16.png)
 
 Run the Docker container to test:
 
 ```bash
 docker run -p 5000:5000 flask-k8s-app
 ```
+![](images/17.png)
 
-![](</Project02/images/17.png>)
+1. Access http://localhost:5000 to see the app running.
 
+![](images/6.png)
 
-Access http://localhost:5000 to see the app running.
-4. Deploying to Minikube Kubernetes
-4.1. Start Minikube
+## 4. Deploying to Minikube Kubernetes
+
+### 4.1. Start Minikube
 
 Start Minikube:
 
 ```bash
 minikube start
 ```
+![](images/18.png)
 
-![](</Project02/images/18.png>)
-
-
-4.2. Create Kubernetes Deployment and Service Manifests
+### 4.2. Create Kubernetes Deployment and Service Manifests
 
 Create a deployment.yaml file:
 
@@ -271,36 +263,30 @@ spec:
   type: NodePort
 ```
 
-4.3. Apply Manifests to Minikube
+### 4.3. Apply Manifests to Minikube
 
 Apply the deployment:
 
 ```bash
 kubectl apply -f deployment.yaml
 ```
-
-![](</Project02/images/19.png>)
-
+![](images/19.png)
 
 Apply the ClusterIP service:
 
 ```bash
 kubectl apply -f service.yaml
 ```
-
-![](</Project02/images/20.png>)
-
+![](images/20.png)
 
 Apply the NodePort service:
 
 ```bash
 kubectl apply -f service-nodeport.yaml
 ```
+![](images/21.png)
 
-![](</Project02/images/21.png>)
-
-
-4.4. Access the Application
+### 4.4. Access the Application
 
 Get the Minikube IP:
 
@@ -308,27 +294,29 @@ Get the Minikube IP:
 minikube ip
 ```
 
-Access the application using the NodePort:
+3. Access the application using the NodePort:
 
 ```bash
 curl http://<minikube-ip>:30001
 ```
 
-5. Clean Up
-5.1. Stop Minikube
+## 5. Clean Up
+
+### 5.1. Stop Minikube
 
 ```bash
 minikube stop
 ```
 
-5.2. Delete Minikube Cluster
+### 5.2. Delete Minikube Cluster
 
 ```bash
 minikube delete
 ```
 
-6. Making Changes to the Flask Application
-6.1. Create a New Branch for Changes
+## 6. Making Changes to the Flask Application
+
+### 6.1. Create a New Branch for Changes
 
 Create and switch to a new branch feature/update-message:
 
@@ -336,7 +324,7 @@ Create and switch to a new branch feature/update-message:
 git checkout -b feature/update-message
 ```
 
-6.2. Update the Application
+### 6.2. Update the Application
 
 Modify app.py to change the message:
 
@@ -349,7 +337,7 @@ def new_route():
     return 'This is a new route!'
 ```
 
-6.3. Commit the Changes
+### 6.3. Commit the Changes
 
 Add and commit the changes:
 
@@ -358,8 +346,9 @@ git add .
 git commit -m "Update main route message"
 ```
 
-7. Merge the Changes and Rebuild the Docker Image
-7.1. Merge the Feature Branch
+## 7. Merge the Changes and Rebuild the Docker Image
+
+### 7.1. Merge the Feature Branch
 
 Switch back to the main branch:
 
@@ -379,7 +368,7 @@ Delete the feature branch:
 git branch -d feature/update-message
 ```
 
-7.2. Rebuild the Docker Image
+### 7.2. Rebuild the Docker Image
 
 Rebuild the Docker image with a new tag:
 
@@ -387,8 +376,9 @@ Rebuild the Docker image with a new tag:
 docker build -t flask-k8s-app:v2 .
 ```
 
-8. Update Kubernetes Deployment
-8.1. Update the Deployment Manifest
+## 8. Update Kubernetes Deployment
+
+### 8.1. Update the Deployment Manifest
 
 Modify deployment.yaml to use the new image version:
 
@@ -414,7 +404,7 @@ spec:
         - containerPort: 5000
 ```
 
-8.2. Apply the Updated Manifest
+### 8.2. Apply the Updated Manifest
 
 Apply the updated deployment:
 
@@ -422,17 +412,17 @@ Apply the updated deployment:
 kubectl apply -f deployment.yaml
 ```
 
-8.3. Verify the Update
+### 8.3. Verify the Update
 
 Check the status of the deployment:
 
 ```bash
-kubectl rollout status deployment/flask-app
+kubectl rollout status deployment/flask-app 
 ```
 
-9. Access the Updated Application
+## 9. Access the Updated Application
 
-9.1. Access Through ClusterIP Service
+### 9.1. Access Through ClusterIP Service
 
 Forward the port to access the ClusterIP service:
 
@@ -440,11 +430,11 @@ Forward the port to access the ClusterIP service:
 kubectl port-forward service/flask-service 8080:80
 ```
 
-Open your browser and navigate to http://localhost:8080 to see the updated message.
+4. Open your browser and navigate to http://localhost:8080 to see the updated message.
 
-9.2. Access Through NodePort Service
+### 9.2. Access Through NodePort Service
 
-Access the application using the NodePort:
+5. Access the application using the NodePort:
 
 ```bash
 curl http://<minikube-ip>:30001
